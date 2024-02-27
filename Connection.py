@@ -32,6 +32,7 @@ def select_from_table(connection, table_name):
 
 if __name__ == '__main__':
     db_connection = ()
+    print("hihi")
 
 #    if db_connection is not None:
 #        select_from_table(db_connection, "akas")
