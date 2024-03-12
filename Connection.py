@@ -7,7 +7,7 @@ def connect_to_database():
             user="postgres",
             password="DKBLV1993",
             host="localhost",
-            port="5431"
+            port="5432"
         )
         print("Verbindung zur Datenbank hergestellt.")
 
@@ -20,7 +20,7 @@ def connect_to_database():
 def select_from_table(connection, table_name):
     try:
         cursor = connection.cursor()
-        cursor.execute(f"SELECT * FROM {table_name}")
+        cursor.execute(f"SELECT * FROM {table_name} LIMIT 10")
         rows = cursor.fetchall()
         for row in rows:
             print(row)
