@@ -20,7 +20,7 @@ def connect_to_database():
 def select_from_table(connection, table_name):
     try:
         cursor = connection.cursor()
-        cursor.execute(f"SELECT * FROM {table_name}")
+        cursor.execute(f"SELECT * FROM {table_name} LIMIT 10")
         rows = cursor.fetchall()
         for row in rows:
             print(row)
@@ -31,8 +31,8 @@ def select_from_table(connection, table_name):
 # Outprint von AKAS-Tabelle ist auskommentiert, Outprint dauert ewig, ist aber keine Endlosloop
 
 if __name__ == '__main__':
-    db_connection = ()
+    db_connection = connect_to_database()
 
-#    if db_connection is not None:
-#        select_from_table(db_connection, "akas")
+    if db_connection is not None:
+        select_from_table(db_connection, "akas")
 
