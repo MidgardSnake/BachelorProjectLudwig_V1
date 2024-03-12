@@ -7,7 +7,7 @@ def connect_to_database():
             user="postgres",
             password="DKBLV1993",
             host="localhost",
-            port="5432"
+            port="5431"
         )
         print("Verbindung zur Datenbank hergestellt.")
 
@@ -31,9 +31,9 @@ def select_from_table(connection, table_name):
 # Outprint von AKAS-Tabelle ist auskommentiert, Outprint dauert ewig, ist aber keine Endlosloop
 
 if __name__ == '__main__':
-    db_connection = ()
-    print("hihi")
 
-#    if db_connection is not None:
-#        select_from_table(db_connection, "akas")
+    db_connection = connect_to_database()
+
+    if db_connection is not None:
+        select_from_table(db_connection, "akas")
 
