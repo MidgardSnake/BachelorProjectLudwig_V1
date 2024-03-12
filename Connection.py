@@ -7,7 +7,7 @@ def connect_to_database():
             user="postgres",
             password="DKBLV1993",
             host="localhost",
-            port="5431"
+            port="5432"
         )
         print("Verbindung zur Datenbank hergestellt.")
 
