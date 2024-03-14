@@ -3,7 +3,7 @@ import psycopg2
 def connect_to_database():
     try:
         connection = psycopg2.connect(
-            dbname="IMDb_Title",
+            dbname="JoinOrderBenchmark",
             user="postgres",
             password="DKBLV1993",
             host="localhost",
@@ -16,7 +16,7 @@ def connect_to_database():
         print("Fehler beim Herstellen der Verbindung zur Datenbank:", e)
         return None
 
-#valid_tablenames: akas , basics, crew, episode , principals, ratings
+#valid_tablenames you can find in public: aka_name , aka_title, cast_info, char_name , etc
 def select_from_table(connection, table_name):
     try:
         cursor = connection.cursor()
@@ -35,5 +35,5 @@ if __name__ == '__main__':
     db_connection = connect_to_database()
 
     if db_connection is not None:
-        select_from_table(db_connection, "akas")
+        select_from_table(db_connection, "aka_name")
 
